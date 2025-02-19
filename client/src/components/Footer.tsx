@@ -12,7 +12,7 @@ export default function Footer() {
               Making content accessible in any language and in any voice
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
@@ -22,7 +22,7 @@ export default function Footer() {
               <li><Link href="#contact">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
@@ -32,19 +32,19 @@ export default function Footer() {
               <li><Link href="/press">Press</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Service</Link></li>
-              <li><Link href="/security">Security</Link></li>
+              <li><Link href="/cookies">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
-        
+
         <Separator className="my-8" />
-        
+
         <div className="text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} ElevenLabs. All rights reserved.</p>
         </div>

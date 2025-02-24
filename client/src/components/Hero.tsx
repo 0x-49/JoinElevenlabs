@@ -15,8 +15,8 @@ export default function Hero() {
               Perfect for creators, businesses, and developers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg">Start Free Trial</Button>
-              <Button size="lg" variant="outline">Watch Demo</Button>
+              <Button size="large">Start Free Trial</Button>
+              <Button size="large" variant="outline">Watch Demo</Button>
             </div>
           </div>
           <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5">

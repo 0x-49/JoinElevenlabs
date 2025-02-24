@@ -147,7 +147,7 @@ export default function Features() {
         >
           <div className="flex justify-center mt-12">
             <a href="https://try.elevenlabs.io/7qngyxyh42op" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="group">
+              <Button size="large" variant="primary" className="group">
                 Explore Features
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>

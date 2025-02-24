@@ -81,8 +81,9 @@ export default function Pricing() {
                 </ul>
                 <Button
                   onClick={() => window.open("https://try.elevenlabs.io/7qngyxyh42op", "_blank", "noopener,noreferrer")}
-                  className="w-full"
-                  variant={plan.popular ? "default" : "outline"}
+                  fullWidth
+                  variant={plan.popular ? "primary" : "primary"}
+                  size="medium"
                 >
                   Get Started
                 </Button>

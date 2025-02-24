@@ -1,95 +1,70 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "@/lib/utils"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import React from 'react';
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  link?: string
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'small' | 'medium' | 'large';
+  link?: string;
+  fullWidth?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, link, ...props }, ref) => {
-    // If we have a link and no onClick handler, render as an anchor
-    if (link && !props.onClick) {
+const getButtonStyles = (
+  variant: ButtonProps['variant'] = 'primary',
+  size: ButtonProps['size'] = 'medium',
+  fullWidth?: boolean
+): string => {
+  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
+  
+  const variants = {
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800',
+    secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300 active:bg-gray-400',
+    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 active:bg-blue-100',
+    ghost: 'text-blue-600 hover:bg-blue-50 active:bg-blue-100'
+  };
+
+  const sizes = {
+    small: 'text-sm px-3 py-1.5',
+    medium: 'text-base px-4 py-2',
+    large: 'text-lg px-6 py-3'
+  };
+
+  const width = fullWidth ? 'w-full' : '';
+
+  return `${baseStyles} ${variants[variant]} ${sizes[size]} ${width}`;
+};
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ 
+    variant = 'primary',
+    size = 'medium',
+    className = '',
+    link,
+    fullWidth,
+    children,
+    ...props
+  }, ref) => {
+    if (link) {
       return (
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant, size, className }))}
-            >
-              {props.children}
-            </a>
-          </TooltipTrigger>
-          <TooltipContent>
-            {link}
-          </TooltipContent>
-        </Tooltip>
-      )
+        <a 
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${getButtonStyles(variant, size, fullWidth)} ${className}`}
+        >
+          {children}
+        </a>
+      );
     }
 
-    // Otherwise render as a button
-    const Comp = asChild ? Slot : "button"
-    const buttonElement = (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+    return (
+      <button
         ref={ref}
+        className={`${getButtonStyles(variant, size, fullWidth)} ${className}`}
         {...props}
-      />
-    )
-
-    // If we have a link but also an onClick, wrap the button in a tooltip
-    return link ? (
-      <Tooltip>
-        <TooltipTrigger asChild>
-          {buttonElement}
-        </TooltipTrigger>
-        <TooltipContent>
-          {link}
-        </TooltipContent>
-      </Tooltip>
-    ) : buttonElement
+      >
+        {children}
+      </button>
+    );
   }
-)
-Button.displayName = "Button"
+);
 
-export { Button, buttonVariants }
+Button.displayName = 'Button';

@@ -82,10 +82,12 @@ const VoiceLab = () => {
             </Card>
 
             <div className="flex gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://try.elevenlabs.io/7qngyxyh42op" target="_blank" rel="noopener noreferrer">
                 <Button className="flex-1">Preview Voice</Button>
               </a>
-              <Button variant="outline" className="flex-1">Reset Settings</Button>
+              <a href="https://try.elevenlabs.io/7qngyxyh42op" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="flex-1">Reset Settings</Button>
+              </a>
             </div>
           </motion.div>
 
@@ -129,7 +131,8 @@ const VoiceLab = () => {
         <div className="flex justify-center mt-8">
           <Button
             onClick={() => window.open("https://try.elevenlabs.io/7qngyxyh42op", "_blank", "noopener,noreferrer")}
-            size="lg"
+            size="large"
+            variant="primary"
             className="group"
           >
             Try Voice Lab

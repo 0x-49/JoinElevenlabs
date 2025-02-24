@@ -72,8 +72,8 @@ const DeveloperHub: React.FC = () => {
         <div className="mt-12 text-center">
           <Button
             onClick={() => window.open("https://try.elevenlabs.io/7qngyxyh42op", "_blank", "noopener,noreferrer")}
-            size="lg"
-            variant="default"
+            size="large"
+            variant="primary"
           >
             Access Developer Portal
           </Button>
@@ -102,7 +102,7 @@ const DeveloperHub: React.FC = () => {
           </pre>
           <div className="mt-4 text-center">
             <a href="https://try.elevenlabs.io/7qngyxyh42op" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="small">
                 Try it in Playground
               </Button>
             </a>

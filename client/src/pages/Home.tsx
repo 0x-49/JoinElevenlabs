@@ -1,23 +1,21 @@
-import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import UseCases from "@/components/sections/UseCases";
-import VoiceLab from "@/components/sections/VoiceLab";
-import TechnicalDeepDive from "@/components/sections/TechnicalDeepDive";
-import EnterpriseSolutions from "@/components/sections/EnterpriseSolutions";
-import EthicsCompliance from "@/components/sections/EthicsCompliance";
-import PricingSection from "@/components/sections/PricingSection";
+import Hero from "../components/sections/Hero";
+import Features from "../components/sections/Features";
+import UseCases from "../components/sections/UseCases";
+import WhyChooseUs from "../components/sections/WhyChooseUs";
+import ROICalculator from "../components/sections/ROICalculator";
+import PricingSection from "../components/sections/PricingSection";
+import CTASection from "../components/sections/CTASection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="min-h-screen">
       <Hero />
       <Features />
       <UseCases />
-      <VoiceLab />
-      <TechnicalDeepDive />
-      <EnterpriseSolutions />
-      <EthicsCompliance />
+      <WhyChooseUs />
+      <ROICalculator />
       <PricingSection />
+      <CTASection />
     </main>
   );
 }

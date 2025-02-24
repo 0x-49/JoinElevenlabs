@@ -13,10 +13,11 @@ import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
 import Cookies from "@/pages/cookies";
 import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/Footer";
 
 function Router() {
   return (
-    <>
+    <div className="relative min-h-screen">
       <Navigation />
       <Switch>
         <Route path="/" component={Home} />
@@ -29,7 +30,8 @@ function Router() {
         <Route path="/cookies" component={Cookies} />
         <Route component={NotFound} />
       </Switch>
-    </>
+      <Footer />
+    </div>
   );
 }
 

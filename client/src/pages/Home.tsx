@@ -7,11 +7,10 @@ import EnterpriseSolutions from "@/components/sections/EnterpriseSolutions";
 import EthicsCompliance from "@/components/sections/EthicsCompliance";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
 import PricingSection from "@/components/sections/PricingSection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="pt-16">
+    <main className="flex min-h-screen flex-col">
       <Hero />
       <Features />
       <UseCases />
@@ -21,7 +20,6 @@ export default function Home() {
       <EthicsCompliance />
       <InteractiveDemo />
       <PricingSection />
-      <Footer />
     </main>
   );
 }

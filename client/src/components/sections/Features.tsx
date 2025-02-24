@@ -158,7 +158,7 @@ export default function Solutions() {
                     <p className="text-sm text-gray-700 italic mb-3">&quot;{solution.demoText}&quot;</p>
                     <Button
                       variant="outline"
-                      size="sm"
+                      size="small"
                       className="w-full"
                       onClick={() => playDemo(solution.demoVoice)}
                       disabled={isPlaying && activeDemo === solution.demoVoice}

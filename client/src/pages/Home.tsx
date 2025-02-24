@@ -5,7 +5,6 @@ import VoiceLab from "@/components/sections/VoiceLab";
 import TechnicalDeepDive from "@/components/sections/TechnicalDeepDive";
 import EnterpriseSolutions from "@/components/sections/EnterpriseSolutions";
 import EthicsCompliance from "@/components/sections/EthicsCompliance";
-import InteractiveDemo from "@/components/sections/InteractiveDemo";
 import PricingSection from "@/components/sections/PricingSection";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <TechnicalDeepDive />
       <EnterpriseSolutions />
       <EthicsCompliance />
-      <InteractiveDemo />
       <PricingSection />
     </main>
   );

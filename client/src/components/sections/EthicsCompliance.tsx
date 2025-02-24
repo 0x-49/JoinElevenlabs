@@ -93,13 +93,13 @@ const EthicsCompliance = () => {
           className="text-center"
         >
           <div className="inline-flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="large">
               View Ethics Guidelines
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="large">
               Compliance Documentation
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="large">
               Security Whitepaper
             </Button>
           </div>

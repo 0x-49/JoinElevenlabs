@@ -1,12 +1,12 @@
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import UseCases from "@/components/sections/UseCases";
+import VoiceLab from "@/components/sections/VoiceLab";
 import TechnicalDeepDive from "@/components/sections/TechnicalDeepDive";
-import SuccessStories from "@/components/sections/SuccessStories";
-import SecurityCompliance from "@/components/sections/SecurityCompliance";
+import EnterpriseSolutions from "@/components/sections/EnterpriseSolutions";
+import EthicsCompliance from "@/components/sections/EthicsCompliance";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
 import PricingSection from "@/components/sections/PricingSection";
-import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,12 +15,12 @@ export default function Home() {
       <Hero />
       <Features />
       <UseCases />
+      <VoiceLab />
       <TechnicalDeepDive />
-      <SuccessStories />
-      <SecurityCompliance />
+      <EnterpriseSolutions />
+      <EthicsCompliance />
       <InteractiveDemo />
       <PricingSection />
-      <Contact />
       <Footer />
     </main>
   );

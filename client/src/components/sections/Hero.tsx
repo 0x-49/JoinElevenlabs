@@ -2,7 +2,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Users, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8 }
+};
+
 export default function Hero() {
+  const handleRedirect = () => {
+    window.location.href = "https://try.elevenlabs.io/7qngyxyh42op";
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white to-gray-50">
       {/* Enhanced background elements */}
@@ -14,9 +24,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 pt-32 pb-20">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          {...fadeInUp}
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-8">
@@ -26,8 +34,7 @@ export default function Hero() {
 
           <motion.h1 
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeInUp}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Transform Content with
@@ -36,8 +43,7 @@ export default function Hero() {
 
           <motion.p 
             className="text-xl md:text-2xl text-gray-600 mb-8 md:mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeInUp}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Experience the future of voice synthesis with our advanced AI technology. 
@@ -47,24 +53,31 @@ export default function Hero() {
 
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeInUp}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button size="lg" className="group bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <Button
+              size="lg"
+              link="https://try.elevenlabs.io/7qngyxyh42op"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="group shadow-md hover:shadow-lg transition-all">
-              <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-              Watch Demo
+            <Button
+              size="lg"
+              variant="outline"
+              link="https://try.elevenlabs.io/7qngyxyh42op"
+              className="w-full sm:w-auto"
+            >
+              Try Demo
+              <Play className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
 
           <motion.div 
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeInUp}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <div className="p-4 rounded-lg bg-white/50 backdrop-blur-sm shadow-sm">

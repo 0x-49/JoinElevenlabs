@@ -1,8 +1,12 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -37,18 +41,53 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  link?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, link, ...props }, ref) => {
+    // If we have a link and no onClick handler, render as an anchor
+    if (link && !props.onClick) {
+      return (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant, size, className }))}
+            >
+              {props.children}
+            </a>
+          </TooltipTrigger>
+          <TooltipContent>
+            {link}
+          </TooltipContent>
+        </Tooltip>
+      )
+    }
+
+    // Otherwise render as a button
     const Comp = asChild ? Slot : "button"
-    return (
+    const buttonElement = (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       />
     )
+
+    // If we have a link but also an onClick, wrap the button in a tooltip
+    return link ? (
+      <Tooltip>
+        <TooltipTrigger asChild>
+          {buttonElement}
+        </TooltipTrigger>
+        <TooltipContent>
+          {link}
+        </TooltipContent>
+      </Tooltip>
+    ) : buttonElement
   }
 )
 Button.displayName = "Button"

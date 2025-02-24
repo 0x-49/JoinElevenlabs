@@ -20,10 +20,14 @@ export default function Navigation() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? "bg-white shadow-md" : "bg-transparent"
     }`}>
-      <nav className="container mx-auto px-4">
+      <nav className="container mx-auto px-6 max-w-6xl">
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <a className="text-2xl font-bold text-primary">ElevenLabs</a>
+            <img 
+              src="https://landing-page-images-seo.s3.eu-north-1.amazonaws.com/ElevenLabs_logo_2.png" 
+              alt="ElevenLabs Logo" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

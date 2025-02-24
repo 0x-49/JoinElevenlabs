@@ -79,7 +79,11 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
+                <Button
+                  onClick={() => window.open("https://try.elevenlabs.io/7qngyxyh42op", "_blank", "noopener,noreferrer")}
+                  className="w-full"
+                  variant={plan.popular ? "default" : "outline"}
+                >
                   Get Started
                 </Button>
               </CardContent>

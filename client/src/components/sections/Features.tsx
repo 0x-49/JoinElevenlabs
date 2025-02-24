@@ -145,10 +145,14 @@ export default function Features() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <Button size="lg" variant="outline" className="group">
-            Explore Technical Documentation
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <div className="flex justify-center mt-12">
+            <a href="https://try.elevenlabs.io/7qngyxyh42op" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="group">
+                Explore Features
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

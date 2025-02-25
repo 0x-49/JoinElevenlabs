@@ -1,6 +1,6 @@
 import Hero from "../components/sections/Hero";
 import Features from "../components/sections/Features";
-import UseCases from "../components/sections/UseCases";
+import UseCasesNew from "../components/sections/UseCasesNew";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
 import ROICalculator from "../components/sections/ROICalculator";
 import PricingSection from "../components/sections/PricingSection";
@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <Features />
-      <UseCases />
+      <UseCasesNew />
       <WhyChooseUs />
       <ROICalculator />
       <PricingSection />

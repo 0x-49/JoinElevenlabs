@@ -151,10 +151,15 @@ const EnterpriseSolutions = () => {
           className="text-center"
         >
           <div className="flex justify-center mt-8">
-            <a href="https://try.elevenlabs.io/7qngyxyh42op">
-              <Button size="large" className="group">
+            <a 
+              href="https://try.elevenlabs.io/7qngyxyh42op" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block w-full"
+            >
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white">
                 Contact Enterprise Sales
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>

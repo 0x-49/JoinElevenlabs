@@ -172,13 +172,20 @@ export default function Solutions() {
                     </Button>
                   </div>
 
-                  <Button
-                    variant="outline"
-                    className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
-                  >
-                    {solution.cta}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+<Button
+  variant="outline"
+  className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
+>
+  <a 
+    href="https://try.elevenlabs.io/7qngyxyh42op" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex items-center justify-center w-full"
+  >
+    {solution.cta}
+    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+  </a>
+</Button>
                 </CardContent>
               </Card>
             </motion.div>
